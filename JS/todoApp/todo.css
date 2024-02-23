@@ -1,5 +1,5 @@
-body {
-    background-color: lightskyblue;
+body{
+    background-color: #3768D2;
     display: flex;
     justify-content: center;
 }
@@ -7,6 +7,7 @@ body {
 .container {
     background-color: #fff;
     width: 50vw;
+    /* width: 500px; */
     margin-top: 30px;
     padding: 30px 20px;
     display: flex;
@@ -14,34 +15,33 @@ body {
     flex-direction: column;
     text-align: center;
 }
- 
+
 #todo {
     height: 50px;
     padding: 10px;
-    border:  2px solid gray;
-    width: 75px;
+    border: 2px solid #3768D2;
+    width: 75%;
     border-radius: 5px;
 }
 
-#form_btn {
-    padding:  25px;
-    background-color: gray;
-    border: 2px solid gray;
+#form-btn {
+    padding: 25px;
+    background-color: #3768D2;
+    border:2px solid #3768D2;
     color: #fff;
     border-radius: 5px;
 }
 
 ul {
-    
-    margin: 25px 75px;
+    margin: 25px 70px;
     list-style: none;
-    padding: 10px;
+    padding: 10px
 }
 
 #delete_btn {
-    background-color: #1b2898;
+    background-color: #1B2898;
     color: #fff;
-    border: 2 px solid #1b2898;
+    border: 2px solid #1B2898;
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -49,12 +49,13 @@ li {
     display: flex;
     justify-content: space-between;
     margin: 10px;
-    background-color: #c6c6c6;
+    background-color: #C6E1E5;
     padding: 10px;
+
 }
 
 li span {
-    padding-top: 10px;
+    padding-top: 10px
 }
 
 .marked {
