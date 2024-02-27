@@ -22,17 +22,74 @@ form.addEventListener("submit", async function (e) {
         let response = await fetch(url);
         let data = await response.json();
 
-        // console.log(data);
+        console.log(data);
 
-        console.log(data.main.temp)
+        get_time(data);
+
         get_temp(data);
+
+        get_loc(data);
+
+        get_feels_like_temp(data);
+
+        get_humidity(data);
+
+        get_pressure(data);
     }
 })
+
+
+function get_time(data) {
+    let months_array = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    let date_dt = data.dt * 1000;
+    let date_time = new Date(date_dt);
+
+    const month_index = date_time.getMonth();
+    const month = months_array[month_index];
+
+    const current_date = date_time.getDate();
+    const current_hours = date_time.getHours();
+    const minutes = date_time.getMinutes();
+
+    // Feb 27, 19:41
+    const final_date = `${month} ${current_date}, ${current_hours}:${minutes}`;
+
+    console.log(final_date);
+
+    const date_element = document.getElementById("date");
+    date_element.innerHTML = final_date;
+}
+
+
 
 const get_temp = (data) => {
     const temp_element = document.getElementById("temp");
 
     temp_element.innerText = `Temp: ${data.main.temp} C`;
+}
+
+
+const get_loc = (data) => {
+    const loc_element = document.getElementById("loc");
+
+    loc_element.innerText = `City: ${data.name}, ${data.sys.country}`;
+}
+
+const get_feels_like_temp = (data) => {
+    const feels_like_element = document.getElementById("feels_like_temp");
+    feels_like_element.innerHTML = `Feels Like Temp: ${data.main.feels_like} C`;
+}
+
+
+function get_humidity (data) {
+    const humidity_element = document.getElementById("humidity");
+    humidity_element.innerText = `Humidity: ${data.main.humidity}%`;
+}
+
+function get_pressure(data) {
+    const pressure_element = document.getElementById("pressure");
+    pressure_element.innerHTML = `Pressure: ${data.main.pressure} Pascal`;
 }
 
 // synchronous function
