@@ -4,15 +4,15 @@
 fruits = ['apple','banana','graphes']
 for fruit in fruits:
     print(fruit)
-
+   
 # while loops
 # while(condition)
 # #loop body
     
-counter = 1
-while counter <= 5:
+counter = 1     
+while counter <= 5:  
     print(counter)
-    counter += 1
+    counter += 1 
 
 def factorial (n):
     result = 1
