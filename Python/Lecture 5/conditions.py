@@ -58,6 +58,6 @@ if x> 10:
     else:
         print('But not above 20')
 
-Task 
-# #  Check whether a given number is even or odd.
-# num % 2 == 0
+# Task 
+# # #  Check whether a given number is even or odd.
+# # num % 2 == 0
