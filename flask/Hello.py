@@ -14,7 +14,7 @@ class Todo(db.Model):
    sno = db.Column(db.Integer, primary_key= True)
    title = db.Column(db.String(200), nullable = False)
    desc = db.Column(db.String(500), nullable = False)
-   date_created = db.Column(db.DateTime, default=datetime.fromtimestamp)
+   date_created = db.Column(db.DateTime, default=datetime.utcnow)
  
 with app.app_context():
     db.create_all()
@@ -24,11 +24,16 @@ def __repr__(self) -> str:
 
 @app.route('/')
 def hello_world():
+   todo = Todo(title="First todo", desc="Enter some tasks" )
+   db.session.add(todo)
+   db.session.commit()
    return render_template('index.html')
    # return 'Hello World'
 
-@app.route('/products')
+@app.route('/show')
 def products():
+   allTodo = Todo.query.all()
+   print(allTodo)
    return 'this is a product page'
 
 if __name__ == "__main__":
