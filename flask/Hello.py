@@ -41,11 +41,11 @@ def products():
    print(allTodo)
    return 'this is a product page'
 
-@app.route('/update')
-def update():
-   allTodo = Todo.query.all()
-   print(allTodo)
-   return 'this is a product page'
+# @app.route('/update')
+# def update():
+#    allTodo = Todo.query.all()
+#    print(allTodo)
+#    return 'this is a product page'
 
 @app.route('/delete/<int:sno>')
 def delete(sno):

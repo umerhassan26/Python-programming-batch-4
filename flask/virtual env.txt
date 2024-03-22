@@ -28,6 +28,6 @@ deactivate
 
 For create Database 
 $ python
->>> from project import app, db
+>>> from Hello import app, db
 >>> app.app_context().push()
 >>> db.create_all()
